@@ -1,0 +1,23 @@
+div class="page-sidebar navbar-collapse collapse"
+  ul class="list-group"
+    li class="list-group-item"
+      = link_to :href => '#/dashboard' do
+        = tag_icon('tachometer')
+        = content_tag :span, 'Dashboard', :class => 'title'
+    li class="list-group-item"
+      = link_to :href => '#/accounts' do
+        = tag_icon('users')
+        = content_tag :span, 'Accounts', :class => 'title'
+
+  ul class="list-group"
+    li class="list-group-item"
+      = link_to :href => '#/brands' do
+        = content_tag :span, 'Brands', :class => 'title'
+    li class="list-group-item"
+      = link_to :href => '#/flavors' do
+        = content_tag :span, 'Flavors', :class => 'title'
+
+  ul class="list-group"
+    li class="list-group-item"
+      = link_to :href => '#/recipes' do
+        = content_tag :span, 'Recipes', :class => 'title'

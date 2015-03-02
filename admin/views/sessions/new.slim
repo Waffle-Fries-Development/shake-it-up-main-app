@@ -1,0 +1,29 @@
+doctype 5
+html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+  head
+    /! Le HTML5 shim, for IE6-8 support of HTML elements
+    /[if lt IE 9]
+      = javascript_include_tag 'http://html5shim.googlecode.com/svn/trunk/html5.js', :type => false
+    meta charset='charset=utf-8'
+    meta name='viewport' content='width=device-width,initial-scale=1'
+    = favicon_tag 'favicon.ico'
+    = stylesheet_link_tag :layout, :type => false
+    title = @title.present? ? "#{@title} | ShakeItUp Admin" : "#{pat('login.title')} | ShakeItUp Admin"
+
+  body
+    div class="container-fluid"
+      div class="row"
+        div class="col-xs-12 col-sm-6 col-sm-push-3"
+          div class="login"
+            = form_tag url(:sessions, :create), :class => 'login-form' do
+              div class="form-group"
+                label class="control-label" = 'Email Address'
+                = email_field_tag :email, :id => :email, :value => params[:email], :placeholder => 'Email Address', :autocomplete => 'off', :autofocus => true, :class => 'form-control form-control-solid placeholder-no-fix'
+              div class="form-group"
+                label class="control-label" = 'Password'
+                = password_field_tag :password, :id => :password, :value => params[:password], :placeholder => 'Password', :autocomplete => 'off', :autofocus => true, :class => 'form-control form-control-solid placeholder-no-fix'
+              div class="form-actions"
+                = submit_tag(pat('login.sign_in'), :class => 'btn btn-success uppercase')
+
+          div class="copyright"
+            | #{Time.now.strftime("%Y")} &copy; ShakeItUp.fitness

@@ -1,0 +1,12 @@
+header ng-include="'/tpl/header.html'"
+
+div class="content"
+
+  div ng-include="'/tpl/flavors.html'"
+
+  div id="recipe" class="row"
+    div class="small-12 medium-8 medium-offset-2 columns"
+      = content_tag :h2, '{{ recipe.name }}'
+      = content_tag :div, false, :'ng-bind-html' => 'recipe.html_instructions', class: :details
+
+footer ng-include="'/tpl/footer.html'"

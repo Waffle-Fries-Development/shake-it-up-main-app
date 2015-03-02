@@ -1,0 +1,17 @@
+div class="small-12"
+  div class="icon-bar four-up"
+    = link_to :href => '#/select_a_flavor' do
+      = content_tag :i, '', :class => 'fa fa-home'
+      = content_tag :label, 'Home'
+
+    = link_to :href => '#/recipes' do
+      = content_tag :i, '', :class => 'fa fa-folder-open'
+      = content_tag :label, 'Recipes', :title => 'View all recipes'
+
+    = link_to :href => '//www.formstack.com/forms/?1951013-dnwYsDEEf7' do
+      = content_tag :i, '', :class => 'fa fa-leaf'
+      = content_tag :label, 'Submit', :title => 'Submit A Recipe'
+
+    = link_to :href => '//www.formstack.com/forms/?1951013-dnwYsDEEf7' do
+      = content_tag :i, '', :class => 'fa fa-inbox'
+      = content_tag :label, 'Contact', :title => 'Contact Me'

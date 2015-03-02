@@ -1,0 +1,14 @@
+
+div class="row"
+  div class="splash-header small-12 medium-6 medium-offset-3 columns"
+    h1 class="logo" = 'ShakeItUp'
+    p = 'Select a flavor to continue.'
+div id="splash" class="row"
+  div class="small-12 medium-8 medium-offset-2 columns"
+    ul class="no-bullet"
+      li = link_to 'Vanilla', class: :vanilla, :href => '#/recipes/vanilla'
+      li = link_to 'Strawberry', class: :strawberry, :href => '#/recipes/strawberry'
+      li = link_to 'Chocolate', class: :chocolate, :href => '#/recipes/chocolate'
+      li = link_to 'Greenberry', class: :greenberry, :href => '#/recipes/greenberry'
+
+footer ng-include="'/tpl/footer.html'"

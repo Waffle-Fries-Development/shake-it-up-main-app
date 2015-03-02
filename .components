@@ -1,0 +1,10 @@
+---
+:orm: datamapper
+:test: cucumber
+:mock: none
+:script: jquery
+:renderer: slim
+:stylesheet: compass
+:namespace: ShakeItUp
+:migration_format: number
+:admin_renderer: slim

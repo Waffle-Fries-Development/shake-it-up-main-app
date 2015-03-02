@@ -1,0 +1,31 @@
+{
+  "name": "shake-it-up",
+  "version": "0.0.0",
+  "description": "Javascript Dependencies for ShakeItUp",
+  "authors": [
+    "Hayden King <hayden@shakeitup.fitness>"
+  ],
+  "license": "MIT",
+  "homepage": "https://shakeitup.fitness",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "1.11.2",
+    "angular": "v1.3.13",
+    "angular-route": "v1.3.13",
+    "angular-resource": "v1.3.13",
+    "angular": "v1.3.13",
+    "angular-bootstrap": "0.12.1",
+    "bootstrap": "v3.3.2",
+    "foundation": "v5.5.1"
+  },
+  "resolutions": {
+    "angular": "v1.3.13"
+  }
+}

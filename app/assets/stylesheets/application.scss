@@ -1,0 +1,202 @@
+@import "settings";
+@import "mixins";
+@import "foundation/scss/foundation";
+@import "font-awesome";
+
+@import url('//fonts.googleapis.com/css?family=Roboto|Satisfy|Flavors');
+
+.splash-header {
+  h1.logo {
+    font-family: 'Satisfy';
+    font-size: 4em;
+    text-align: center;
+  }
+  p {
+    text-align: center;
+  }
+}
+
+#splash {
+  a.strawberry {
+    @include button($button-lrg, $Strawberry, 8px, true, false, false);
+    font-family: 'Flavors';
+    font-size: 3em;
+  }
+
+  a.vanilla {
+    @include button($button-lrg, $Vanilla, 8px, true, false, false);
+    font-family: 'Flavors';
+    font-size: 3em;
+  }
+
+  a.chocolate {
+    @include button($button-lrg, $Chocolate, 8px, true, false, false);
+    font-family: 'Flavors';
+    font-size: 3em;
+  }
+
+  a.greenberry {
+    @include button($button-lrg, $Greenberry, 8px, true, false, false);
+    font-family: 'Flavors';
+    font-size: 3em;
+  }
+}
+
+.flavor-bar {
+  @include icon-bar($bar-bg: transparent);
+  margin-top: -7px;
+  a.vanilla {
+    color: darken($Vanilla, 25%);
+    background-color: lighten($Vanilla, 10%);
+    &:hover {
+      color: $white-smoke;
+      background-color: darken($Vanilla, 25%);
+    }
+  }
+  a.strawberry {
+    color: darken($Strawberry, 25%);
+    background-color: lighten($Strawberry, 10%);
+    &:hover {
+      color: $white-smoke;
+      background-color: darken($Strawberry, 25%);
+    }
+  }
+  a.chocolate {
+    color: darken($Chocolate, 25%);
+    background-color: lighten($Chocolate, 10%);
+    &:hover {
+      color: $white-smoke;
+      background-color: darken($Chocolate, 25%);
+    }
+  }
+  a.greenberry {
+    color: darken($Greenberry, 25%);
+    background-color: lighten($Greenberry, 10%);
+    &:hover {
+      color: $white-smoke;
+      background-color: darken($Greenberry, 25%);
+    }
+  }
+}
+
+#recipes {
+  margin-top: 2em;
+}
+
+$Twitter: #00aced;
+$Instagram: #517fa4;
+$Vine: #00bf8f;
+$Facebook: #6d8bc9;
+$GooglePlus: #d34836;
+$YouTube: #b31217;
+
+.social-icons {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding:0;
+  list-style-type: none;
+  content: '';
+  li {
+    display:inline-block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  a {
+    width:30px;
+    padding:8px 0 7px 0;
+    font-size:14px;
+    text-align:center;
+    border:2px solid;
+    border-radius:3px;
+    margin-right:15px;
+    opacity:1;
+    text-decoration: none;
+  }
+  .fa-twitter {
+    color: $Twitter;
+    border-color: $Twitter;
+    &:hover {
+      color: $white-smoke;
+      background: $Twitter;
+    }
+  }
+  .fa-instagram {
+    color: $Instagram;
+    border-color: $Instagram;
+    &:hover {
+      color: $white-smoke;
+      background: $Instagram;
+    }
+  }
+  .fa-vine {
+    color: $Vine;
+    border-color: $Vine;
+    &:hover {
+      color: $white-smoke;
+      background: $Vine;
+    }
+  }
+  .fa-facebook {
+    color: $Facebook;
+    border-color: $Facebook;
+    &:hover {
+      color: $white-smoke;
+      background: $Facebook;
+    }
+  }
+  .fa-google-plus {
+    color: $GooglePlus;
+    border-color: $GooglePlus;
+    &:hover {
+      color: $white-smoke;
+      background: $GooglePlus;
+    }
+  }
+  .fa-youtube-play {
+    color: $YouTube;
+    border-color: $YouTube;
+    &:hover {
+      color: $white-smoke;
+      background: $YouTube;
+    }
+  }
+}
+
+footer {
+  p.copyright {
+    font-size: 0.65em;
+  }
+}
+
+@media #{$small-only} {
+  .flavor-bar {
+    a {
+      span.text {
+        display: none;}
+      i.fa {
+        color: inherit;
+        display: inline;}
+    }
+  }
+
+  footer {
+    text-align: center;
+  }
+}
+
+@media #{$medium-up} {
+  .flavor-bar {
+    a {
+      span.text {
+        display: inline;}
+      i.fa {
+        color: inherit;
+        display: none;}
+    }
+  }
+
+  footer {
+    text-align: center;
+  }
+}

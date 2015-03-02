@@ -1,0 +1,21 @@
+header ng-include="'/tpl/header.html'"
+
+div class="content"
+
+  div ng-include="'/tpl/flavors.html'"
+
+  div id="recipes" class="row"
+    div class="small-12 medium-8 medium-offset-2 columns"
+      table role="grid" width="100%"
+        thead
+          tr
+            th = 'Recipe Name'
+            th = 'Brand'
+            th = 'Flavor'
+        tbody
+          tr ng-repeat="recipe in recipes"
+            td = link_to '{{ recipe.name }}', :href => '#/recipe/{{ recipe.id }}/details'
+            td = '{{ recipe.brand.name }}'
+            td = '{{ recipe.flavor.name }}'
+
+footer ng-include="'/tpl/footer.html'"

@@ -1,0 +1,72 @@
+div class="page-bar"
+  ol class="breadcrumb"
+    li
+      = tag_icon('home')
+      = link_to 'Home', '#/'
+    li = link_to 'Brands', '#/brands', class: :active
+
+/! BEGIN PAGE CONTENT
+
+div class="panel panel-default"
+
+  div class="panel-heading"
+    h3 class="panel-title" = 'Brands'
+
+  div class="panel-body"
+
+    div class="row"
+      div class="col-md-12"
+        table class="table table-striped table-bordered table-hover"
+          thead
+            tr role="row" class="heading" ng-hide="brands.length === 0"
+              th = 'ID'
+              th = 'Name'
+              th == '&nbsp;'
+          tfoot
+            tr role="row"
+              th colspan="6"
+                = link_to tag_icon('plus', 'Create'), role: :button, :href => false, :class => 'btn btn-default', :'data-toggle' => 'modal', :'data-target' => "#brand_form", :'ng-click' => 'new_form()'
+          tbody
+            tr ng-repeat="brand in brands"
+              td = '{{ brand.id }}'
+              td = '{{ brand.name }}'
+              td
+                div class="btn-group"
+                  button type="button" class="btn btn-circle red-pink dropdown-toggle" data-toggle="dropdown"
+                    == 'Actions&nbsp;'
+                    = tag_icon('angle-down')
+                  ul class="dropdown-menu" role="menu"
+                    li = link_to tag_icon('pencil', 'Edit'), role: :button, :href => false, :'data-toggle' => 'modal', :'data-target' => "#brand_form", :'ng-click' => 'edit_form($index)'
+                    li = link_to tag_icon('trash-o', 'Delete'), role: :button, :href => false, :'ng-click' => "remove($index, '#{csrf_token}')"
+/! END PAGE CONTENT
+
+/! BEGIN MODAL CONTENT
+div class="modal fade" id="brand_form"
+  div class="modal-dialog"
+    div class="modal-content"
+      div class="modal-header"
+        button type="button" class="close" data-dismiss="modal" aria-label="Close"
+          span aria-hidden="true" == '&times;'
+        h4 class="modal-title" ng-show="is_new" == 'Create New Brand'
+        h4 class="modal-title" ng-hide="is_new" == 'Edit Brand &ndash; {{ brand.name }}'
+
+      div class="modal-body"
+        ul class="messages"
+          li ng-repeat="message in messages"
+            p class="bg-success text-success" = '{{ message }}'
+          li ng-repeat="error in errors"
+            p class="bg-danger text-danger" = '{{ error }}'
+        form ng-model="brand" ng-init="reset_error_messages(); authenticity_token='#{csrf_token}'"
+          input type="hidden" ng-model="brand.id"
+          div class="form-group"
+            label for="brand_name" = 'Brand Name'
+            input type="text" class="form-control" id="brand_name" placeholder="Enter Brand Name" ng-model="brand.name"
+          div class="form-group"
+            label for="selected_flavors" = 'Flavors'
+            select class="form-control" ng-model="brand.flavors" ng-multiple="true" ng-options="flavor.name for flavor in flavors track by flavor.id" multiple="multiple"
+
+      div class="modal-footer"
+        button type="button" class="btn btn-default" data-dismiss="modal" = 'Close'
+        button type="button" ng-click="reset_error_messages(); save(authenticity_token)" class="btn btn-primary" = 'Save changes'
+
+/! END MODAL CONTENT

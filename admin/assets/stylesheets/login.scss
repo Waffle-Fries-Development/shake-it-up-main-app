@@ -1,0 +1,36 @@
+//## Main Layout CSS Builder
+
+@import 'global/_variables'; // global metronic framework variables
+@import 'global/components/_mixins'; // global metronic framework mixings
+@import 'global/components';
+@import 'global/plugins';
+
+@import '_variables'; // theme level variables
+@import 'themes/default';
+
+.login {
+  .content {
+    background-color: $page-content-solid-bg-color;
+    @include border-radius(7px);
+    width: 400px;
+    margin: 40px auto 10px auto;
+    padding: 30px;
+    padding-top: 10px;
+    overflow: hidden;
+    position: relative;
+
+    .form-control {
+      background-color: #dde3ec;
+      height: 43px;
+      color: #8290a3;
+      border: 1px solid #dde3ec;
+    }
+  }
+  .copyright {
+    text-align: center;
+    margin: 0 auto 30px 0;
+    padding: 10px;
+    color: #7a8ca5;
+    font-size: 13px;
+  }
+}
