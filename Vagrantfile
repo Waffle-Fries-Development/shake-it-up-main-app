@@ -23,27 +23,16 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # noinspection RubyResolve
   config.vm.provider :vmware_fusion do |vf, override|
     override.vm.box_url = './ubuntu-amd64-vmware.box'
-    override.vm.network :forwarded_port, guest: 22, host: 2222, id: 'ssh', disabled: true
-
+    override.vm.network :forwarded_port, guest: 22, host: 2222, id: :ssh, disabled: true
     vf.gui = false
   end
 
-  # noinspection RubyResolve
-  config.vm.synced_folder '.', '/vagrant', disabled: true
-
-  # noinspection RubyResolve
-  config.vm.synced_folder '.', '/srv/httpd/shake-it-up',
-    type: 'rsync', owner: 'vagrant', group: 'vagrant',
+  config.vm.synced_folder '.', '/srv/httpd/shake-it-up', type: :rsync, owner: :vagrant, group: :vagrant,
     rsync__exclude: %w[.DS_Store .idea/ *.db salt/ Vagrantfile *.box .vagrant/ .bundle/ vendor/ log/ tmp/
-    .sass-cache/ bower_components/ .git/]
+    .sass-cache/ bower_components/ node_modules/ public/ .git/]
 
-  # noinspection RubyResolve
-  config.vm.synced_folder './salt/roots/pillar', '/srv/pillar',
-    type: 'rsync', owner: 'root', group: 'root'
-
-  # noinspection RubyResolve
-  config.vm.synced_folder './salt/roots/salt', '/srv/salt',
-    type: 'rsync', owner: 'root', group: 'root'
+  config.vm.synced_folder './salt/roots/pillar', '/srv/pillar', type: :rsync, owner: :root, group: :root
+  config.vm.synced_folder './salt/roots/salt', '/srv/salt', type: :rsync, owner: :root, group: :root
 
   # noinspection RubyResolve
   config.vm.provision :salt do |s|

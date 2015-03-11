@@ -1,9 +1,7 @@
-@import "settings";
-@import "mixins";
-@import "foundation/scss/foundation";
+@import "app/settings";
+@import "global/mixins";
+@import "foundation";
 @import "font-awesome";
-
-@import url('//fonts.googleapis.com/css?family=Roboto|Satisfy|Flavors');
 
 .splash-header {
   h1.logo {
@@ -19,26 +17,22 @@
 #splash {
   a.strawberry {
     @include button($button-lrg, $Strawberry, 8px, true, false, false);
-    font-family: 'Flavors';
-    font-size: 3em;
+    font-size: 2.5em;
   }
 
   a.vanilla {
     @include button($button-lrg, $Vanilla, 8px, true, false, false);
-    font-family: 'Flavors';
-    font-size: 3em;
+    font-size: 2.5em;
   }
 
   a.chocolate {
     @include button($button-lrg, $Chocolate, 8px, true, false, false);
-    font-family: 'Flavors';
-    font-size: 3em;
+    font-size: 2.5em;
   }
 
   a.greenberry {
     @include button($button-lrg, $Greenberry, 8px, true, false, false);
-    font-family: 'Flavors';
-    font-size: 3em;
+    font-size: 2.5em;
   }
 }
 

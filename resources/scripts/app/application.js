@@ -1,0 +1,9 @@
+//= require ../../../bower_components/jquery/dist/jquery.js
+//= require ../../../bower_components/fastclick/lib/fastclick.js
+//= require ../../../bower_components/foundation/js/foundation.js
+//= require ../../../bower_components/angular/angular.js
+//= require ../../../bower_components/angular-route/angular-route.js
+//= require ../../../bower_components/angular-resource/angular-resource.js
+//= require ../../../bower_components/angular-sanitize/angular-sanitize.js
+//= require app.js
+//= require_tree ./controllers

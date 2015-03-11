@@ -7,3 +7,5 @@ vendor/gems/*
 db/*.db
 .*.sw*
 *.box
+bower_components/*
+node_modules/*

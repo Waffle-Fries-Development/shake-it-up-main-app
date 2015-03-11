@@ -20,12 +20,15 @@
     "angular": "v1.3.13",
     "angular-route": "v1.3.13",
     "angular-resource": "v1.3.13",
+    "angular-sanitize": "v1.3.13",
     "angular": "v1.3.13",
     "angular-bootstrap": "0.12.1",
-    "bootstrap": "v3.3.2",
-    "foundation": "v5.5.1"
+    "bootstrap-sass": "3.3.3",
+    "foundation": "v5.5.1",
+    "components-font-awesome": "4.3.0"
   },
   "resolutions": {
-    "angular": "v1.3.13"
+    "angular": "v1.3.13",
+    "jquery": "1.11.2"
   }
 }

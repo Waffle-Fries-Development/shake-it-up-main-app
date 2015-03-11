@@ -3,13 +3,12 @@ module ShakeItUp
 
     register Padrino::Mailer
     register Padrino::Helpers
-    register CompassInitializer
-    register Padrino::Sprockets
 
-    sprockets :minify => (Padrino.env == :production),
-              :paths => ['../bower_components']
+    set :js_asset_folder, '/js'
+    set :css_asset_folder, '/css'
 
     enable :sessions
+    disable :asset_stamp
 
     get '/views/:name.html' do
       content_type 'text/html', :charset => 'utf-8'
@@ -57,13 +56,6 @@ module ShakeItUp
     # layout  :my_layout            # Layout can be in views/layouts/foo.ext or views/foo.ext (default :application)
     #
 
-    ##
-    # You can configure for a specified environment like:
-    #
-    configure :development do
-      # set :foo, :bar
-      disable :asset_stamp # no asset timestamping for dev
-    end
 
     ##
     # You can manage errors like:

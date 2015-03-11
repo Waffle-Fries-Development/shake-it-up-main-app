@@ -1,9 +1,5 @@
-@import "foundation/scss/normalize";
-@import "bootstrap";
+@import "_bootstrap";
 @import "font-awesome";
-
-//## Main Layout CSS Builder
-@import url('//fonts.googleapis.com/css?family=Open+Sans|Roboto|Satisfy|Lato:300,400,900');
 
 $OffWhite: darken(#fff, 3%);
 

@@ -7,6 +7,8 @@ ruby '2.1.4'
 # Server requirements
 # gem 'thin' # or mongrel
 # gem 'trinidad', :platform => 'jruby'
+gem 'puma', '~> 2.11.1'
+gem 'foreman', '~> 0.77.0'
 
 # Optional JSON codec (faster performance)
 # gem 'oj'
@@ -16,7 +18,6 @@ gem 'rake'
 
 # Component requirements
 gem 'bcrypt'
-gem 'compass'
 gem 'slim'
 gem 'dm-validations'
 gem 'dm-timestamps'
@@ -26,22 +27,15 @@ gem 'dm-aggregates'
 gem 'dm-types'
 gem 'dm-core'
 gem 'dm-serializer'
-gem 'padrino-sprockets', :require => ['padrino/sprockets'],
-  :git => 'git://github.com/nightsailer/padrino-sprockets.git'
-gem 'uglifier', '2.1.1'
-gem 'yui-compressor', '0.9.6'
-gem 'bootstrap-sass', '~> 3.3.3'
-gem 'font-awesome-sass', '~> 4.2.0'
+gem 'dm-sqlite-adapter', :groups => [:development, :test]
+gem 'dm-postgres-adapter', :group => :production
 gem 'kramdown', '~> 1.5.0'
-gem 'puma', '~> 2.11.1'
-gem 'foreman', '~> 0.77.0'
 
-group :development do
-  gem 'dm-sqlite-adapter'
-end
-
-group :production do
-  gem 'dm-postgres-adapter'
+# Development only components
+group :test, :development do
+  gem 'compass'
+  gem 'uglifier', '2.1.1'
+  gem 'yui-compressor', '0.9.6'
 end
 
 # Test requirements

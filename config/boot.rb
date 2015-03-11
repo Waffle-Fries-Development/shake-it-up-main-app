@@ -5,7 +5,6 @@ PADRINO_ROOT = File.expand_path('../..', __FILE__) unless defined?(PADRINO_ROOT)
 # Load our dependencies
 require 'rubygems' unless defined?(Gem)
 require 'bundler/setup'
-require 'font_awesome/sass/rails/helpers'
 Bundler.require(:default, RACK_ENV)
 
 ##

@@ -1,14 +1,14 @@
 doctype 5
 html lang="en" xmlns="http://www.w3.org/1999/xhtml"
   head
-    /! Le HTML5 shim, for IE6-8 support of HTML elements
-    /[if lt IE 9]
-      = javascript_include_tag 'http://html5shim.googlecode.com/svn/trunk/html5.js', :type => false
+    link rel="stylesheet" async="" href="/css/admin.css"
+    = favicon_tag '/favicon.ico'
     meta charset='charset=utf-8'
     meta name='viewport' content='width=device-width,initial-scale=1'
-    = favicon_tag 'favicon.ico'
-    = stylesheet_link_tag :layout, :type => false
     title = @title.present? ? "#{@title} | ShakeItUp Admin" : "#{pat('login.title')} | ShakeItUp Admin"
+    /! Le HTML5 shim, for IE6-8 support of HTML elements
+    /[if lt IE 9]
+      = javascript_include_tag '//html5shim.googlecode.com/svn/trunk/html5.js', :type => false
 
   body
     div class="container-fluid"

@@ -1,0 +1,25 @@
+{
+  "name": "shake-it-up",
+  "version": "0.0.0",
+  "description": "ShakeItUp DevTools",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "bower": "^1.3.12",
+    "gulp": "^3.8.11",
+    "gulp-bower": "^0.0.10",
+    "gulp-clean": "~0.2.4",
+    "gulp-concat": "~2.2.0",
+    "gulp-imagemin": "~0.1.4",
+    "gulp-include": "~1.1.1",
+    "gulp-notify": "^2.2.0",
+    "gulp-rev": "^3.0.1",
+    "gulp-ruby-sass": "^1.0.0-alpha.3",
+    "gulp-uglify": "~0.2.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Hayden King <hayden@shakeitup.fitness>",
+  "license": "ISC"
+}

@@ -3,10 +3,6 @@ module ShakeItUp
     register Padrino::Mailer
     register Padrino::Helpers
     register Padrino::Admin::AccessControl
-    register CompassInitializer
-    register Padrino::Sprockets
-    sprockets :minify => (Padrino.env == :production),
-              :paths => ['../bower_components']
 
     ##
     # Application configuration options
@@ -37,13 +33,13 @@ module ShakeItUp
     set :admin_model, 'Account'
     set :login_page,  '/sessions/new'
 
-    configure :development do
-      # set :foo, :bar
-      disable :asset_stamp # no asset timestamping for dev
-    end
+    set :js_asset_folder, '/js'
+    set :css_asset_folder, '/css'
+    set :uri_root, '/'
 
     enable  :sessions
     disable :store_location
+    disable :asset_stamp
 
     access_control.roles_for :any do |role|
       role.allow   '/sessions'
