@@ -1,4 +1,0 @@
-base:
-  '*':
-    - rbenv
-    - git
